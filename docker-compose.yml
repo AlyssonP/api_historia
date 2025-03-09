@@ -1,0 +1,22 @@
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    container_name: db-api-historia
+    volumes:
+      - data:/var/lib/postgresql/db
+    networks:
+      - api-net
+    environment:
+      POSTGRES_DB: db_api_historia
+      POSTGRES_USER: api
+      POSTGRES_PASSWORD: api1234
+    ports:
+      - "5432:5432"
+
+volumes:
+  data:
+    external: false
+networks:
+  api-net:
+    driver: bridge
