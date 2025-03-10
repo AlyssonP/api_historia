@@ -2,7 +2,7 @@ package com.example.api_historia.controller;
 
 import com.example.api_historia.domain.conteudo.ConteudoDTO;
 import com.example.api_historia.services.ConteudoService;
-import lombok.RequiredArgsConstructor;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,10 +12,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/conteudos")
-@RequiredArgsConstructor
+@CrossOrigin(origins = "*")
+@Tag(name = "Conteúdos", description = "Operações relacionadas a conteúdos")
 public class ConteudoController {
 
-    private final ConteudoService service;
+    @Autowired
+    private ConteudoService service;
 
     @PostMapping
     public ResponseEntity<ConteudoDTO> create(@RequestBody ConteudoDTO dto) {
