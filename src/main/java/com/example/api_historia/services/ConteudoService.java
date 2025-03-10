@@ -46,12 +46,12 @@ public class ConteudoService {
                 .orElseThrow(() -> new RuntimeException("Seção não encontrada"));
     }
 
-    private ConteudoDTO toDTO(Conteudo entity) {
+    private ConteudoDTO toDTO(Conteudo conteudo) {
         return new ConteudoDTO(
-                entity.getId(),
-                entity.getSecao(),
-                entity.getTexto(),
-                entity.getHistoria().getId()
+                conteudo.getId(),
+                conteudo.getSecao(),
+                conteudo.getTexto(),
+                conteudo.getHistoria().getId()
         );
     }
 }

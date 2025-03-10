@@ -28,7 +28,7 @@ public class HistoriaService {
         return repository.findAll().stream().map(this::toDTO).toList();
     }
 
-    private HistoriaDTO toDTO(Historia entity) {
-        return new HistoriaDTO(entity.getId(), entity.getTitulo());
+    private HistoriaDTO toDTO(Historia historia) {
+        return new HistoriaDTO(historia.getId(), historia.getTitulo());
     }
 }

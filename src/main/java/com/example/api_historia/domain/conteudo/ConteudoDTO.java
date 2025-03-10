@@ -12,4 +12,10 @@ public class ConteudoDTO {
     private Integer secao;
     private String texto;
     private Long idHistoria;
+
+    public ConteudoDTO(Integer secao, String texto, Long idHistoria) {
+        this.secao = secao;
+        this.texto = texto;
+        this.idHistoria = idHistoria;
+    }
 }

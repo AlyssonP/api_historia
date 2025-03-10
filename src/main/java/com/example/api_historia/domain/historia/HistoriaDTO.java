@@ -10,4 +10,8 @@ import lombok.NoArgsConstructor;
 public class HistoriaDTO {
     private Long id;
     private String titulo;
+
+    public HistoriaDTO(String titulo) {
+        this.titulo = titulo;
+    }
 }
